@@ -5,9 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js",
+    "start": "node app.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
-
   },
   "engines": {
     "node": "12.18.0"
@@ -19,6 +18,7 @@
     "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.5",
     "mongoose": "^5.9.22"
   }
 }
