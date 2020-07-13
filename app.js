@@ -56,6 +56,10 @@ app.get('/users', function(req, res, next) {
 
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/public/index.html'));
+});
+
 app.post("/users", function(req, res) {
   res.json("pip")
   const add = req.body;
