@@ -3,12 +3,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
+const path = require('path');
 mongoose.set('useUnifiedTopology', true);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 mongoose.connect("mongodb+srv://@cluster0.cceon.mongodb.net/keeperdb?retryWrites=true&w=majority", {
@@ -57,7 +58,7 @@ app.get('/users', function(req, res, next) {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(__dirname+'/client/public/index.html');
+  res.sendFile(path.join(__dirname, '/client/public/index.html'));
 });
 
 app.post("/users", function(req, res) {
