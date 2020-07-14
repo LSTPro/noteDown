@@ -5,7 +5,7 @@ import CreateIcon from '@material-ui/icons/Create';
 function Header() {
   return (
     <header>
-      <h1><NotesIcon /> noteDown <CreateIcon /></h1>
+      <h1><NotesIcon />noteDown <CreateIcon /></h1>
     </header>
   );
 }
