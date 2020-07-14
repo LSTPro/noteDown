@@ -27,7 +27,8 @@ function CreateArea(props) {
         Id:i
       };
     });
-  }
+  } 
+  
  //Export note to the App.jsx and to the Backend route"/"
   function submitNote(event) {
     props.onAdd(note);
@@ -41,7 +42,6 @@ function CreateArea(props) {
       .then(response => response.json())
       .then(json => console.log(json))
       .catch(err=>console.log(err))
-
 
     setNote({
       Id:"",
