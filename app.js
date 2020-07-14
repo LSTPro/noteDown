@@ -36,15 +36,6 @@ const keeperSchema = new mongoose.Schema({
 
 const Keeper = mongoose.model("Unit", keeperSchema);
 
-const unit = new Keeper({
-  username: "Likhith",
-  password: "abc",
-  notesCollection: [{
-    title: "Creator",
-    content: "Likhith"
-  }]
-})
-
 /* GET users listing. */
 app.get('/users', function(req, res, next) {
   Keeper.find(function(err, results) {
